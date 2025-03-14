@@ -8,6 +8,7 @@ return {
       opts.ensure_installed = {
         "bash",
         "elixir",
+        "heex",
         "embedded_template",
         "html",
         "javascript",
@@ -23,6 +24,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "vue",
       }
     end,
   },

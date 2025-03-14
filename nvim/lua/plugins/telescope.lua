@@ -1,5 +1,3 @@
--- ~/.config/nvim/lua/plugins/telescope.lua
-
 return {
   "nvim-telescope/telescope.nvim",
   requires = { { "nvim-lua/plenary.nvim" } },
@@ -30,7 +28,7 @@ return {
     })
 
     -- Optionally, load any extensions you might be using
-    telescope.load_extension("fzf")
+    -- telescope.load_extension("fzf")
     vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", {})
     vim.keymap.set("n", "<leader>fw", "<cmd>Telescope grep_string<CR>", {})
   end,

@@ -1,7 +1,4 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.cmd("set expandtab")
-vim.cmd("set tabstop=2")
-vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=2")
+vim.g.node_host_prog = vim.fn.expand("~/.asdf/installs/nodejs/23.0.0/bin/node")
