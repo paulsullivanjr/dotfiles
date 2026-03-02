@@ -1,0 +1,122 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+line-number = "relative"
+mouse = false
+auto-format = true
+bufferline = "multiple"
+undercurl = true
+cursorline = true
+scrolloff = 7
+popup-border = "all"
+shell = ["zsh", "-c"]
+auto-pairs = true
+end-of-line-diagnostics = "hint"
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+color-modes = true
+idle-timeout = 250
+completion-timeout = 5
+text-width = 120
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+snippets = true
+display-messages = true
+display-inlay-hints = true
+
+[editor.indent-guides]
+render = true
+character = "│"
+skip-levels = 1
+
+[editor.soft-wrap]
+enable = false
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.whitespace.render]
+tab = "all"
+trailing-space = "all"
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "file-name",
+  "file-type",
+  "total-line-numbers",
+  "file-encoding",
+]
+center = []
+right = [
+  "selections",
+  "primary-selection-length",
+  "position",
+  "position-percentage",
+  "spacer",
+  "diagnostics",
+  "workspace-diagnostics",
+  "version-control",
+]
+
+# ── Normal mode ──────────────────────────────────────────────────
+
+[keys.normal]
+tab = ":buffer-next"
+S-tab = ":buffer-previous"
+U = "redo"
+X = "extend_line_above"
+"C-s" = ":write"
+"C-h" = "jump_view_left"
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-l" = "jump_view_right"
+g = { c = "toggle_comments" }
+
+# Move lines up/down (like vim-unimpaired)
+"S-j" = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+"S-k" = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+
+# ── Space (leader) ───────────────────────────────────────────────
+
+[keys.normal.space]
+# File explorer (yazi)
+e = [
+  ':sh rm -f /tmp/unique-file',
+  ':insert-output yazi "%{buffer_name}" --chooser-file=/tmp/unique-file',
+  ':insert-output echo "\x1b[?1049h\x1b[?2004h" > /dev/tty',
+  ':open %sh{cat /tmp/unique-file}',
+  ':redraw',
+]
+# Git (lazygit)
+g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+# Git blame current file
+B = ":sh git blame %{buffer_name}"
+# Reload buffer from disk
+L = ":reload"
+
+# ── Insert mode ──────────────────────────────────────────────────
+
+[keys.insert]
+j = { k = "normal_mode" }
+"C-s" = ":write"
+
+# ── Select mode ──────────────────────────────────────────────────
+
+[keys.select]
+"C-h" = "jump_view_left"
+"C-j" = "jump_view_down"
+"C-k" = "jump_view_up"
+"C-l" = "jump_view_right"

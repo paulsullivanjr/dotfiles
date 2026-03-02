@@ -1,0 +1,70 @@
+# ── Language Servers ──────────────────────────────────────────────
+
+[language-server.ruby-lsp]
+command = "ruby-lsp"
+
+[language-server.rubocop]
+command = "rubocop"
+args = ["--lsp"]
+
+[language-server.expert]
+command = "/Users/paulsullivan/.local/bin/expert"
+args = ["--stdio"]
+
+# ── Ruby ─────────────────────────────────────────────────────────
+
+[[language]]
+name = "ruby"
+language-servers = ["ruby-lsp", "rubocop"]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+file-types = [
+  "rb",
+  "rake",
+  "rakefile",
+  "irb",
+  "gemfile",
+  "gemspec",
+  "Rakefile",
+  "Gemfile",
+  "rabl",
+  "jbuilder",
+  "jb",
+  "Podfile",
+  "podspec",
+  "Vagrantfile",
+  "Brewfile",
+  "Guardfile",
+  "Capfile",
+  "Thorfile",
+  "Fastfile",
+  "Appfile",
+  "Deliverfile",
+]
+
+[[language]]
+name = "erb"
+language-servers = ["ruby-lsp"]
+auto-format = true
+indent = { tab-width = 2, unit = "  " }
+
+# ── Elixir ───────────────────────────────────────────────────────
+
+[[language]]
+name = "elixir"
+language-servers = ["expert"]
+auto-format = true
+formatter = { command = "mix", args = ["format", "-"] }
+indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "heex"
+language-servers = ["expert"]
+auto-format = true
+formatter = { command = "mix", args = ["format", "-"] }
+indent = { tab-width = 2, unit = "  " }
+
+# ── Git ──────────────────────────────────────────────────────────
+
+[[language]]
+name = "git-commit"

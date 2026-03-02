@@ -1,0 +1,5 @@
+.DS_Store
+nvim/lazy-lock.json
+nvim/.tool-versions
+helix/.claude/
+helix/.expert/

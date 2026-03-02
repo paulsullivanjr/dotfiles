@@ -1,0 +1,99 @@
+# Alacritty Configuration File
+# Font settings
+[font]
+# Font family for normal text
+normal.family = "FiraCode Nerd Font"
+normal.style = "Regular"
+
+# Font family for bold text
+bold.family = "FiraCode Nerd Font"
+bold.style = "Bold"
+
+# Font family for italic text
+italic.family = "FiraCode Nerd Font"
+italic.style = "Italic"
+
+# Font family for bold italic text
+bold_italic.family = "FiraCode Nerd Font"
+bold_italic.style = "Bold Italic"
+
+# Font size in points
+size = 14.0
+
+# Font offset
+offset.x = 0
+offset.y = 0
+
+
+# Window settings
+[window]
+# Initial dimensions (columns x lines)
+dimensions.columns = 80
+dimensions.lines = 24
+
+# Padding around the terminal content
+padding.x = 5
+padding.y = 5
+
+# Decorations: "full", "none", "transparent"
+decorations = "full"
+
+# Enable/disable dynamic padding
+dynamic_padding = false
+
+# Colors
+[colors]
+[colors.primary]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[colors.normal]
+black   = "#1e1e2e"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#cba6f7"
+cyan    = "#89dceb"
+white   = "#cdd6f4"
+
+[colors.bright]
+black   = "#45475a"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#cba6f7"
+cyan    = "#89dceb"
+white   = "#f2f2f2"
+
+# Cursor settings
+[cursor]
+style = "Block"
+
+# Scrolling
+[scrolling]
+history = 10000
+multiplier = 3
+
+[keyboard]
+
+# Shell settings
+[terminal.shell]
+program = "/bin/zsh"
+
+# Key bindings
+# Paste with Ctrl+Shift+V
+[[keyboard.bindings]]
+key = "V"
+mods = ["Control", "Shift"]
+action = "Paste"
+
+# Copy with Ctrl+Shift+C
+[[keyboard.bindings]]
+key = "C"
+mods = ["Control", "Shift"]
+action = "Copy"
+
+[terminal]
+
