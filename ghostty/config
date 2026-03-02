@@ -1,4 +1,4 @@
-theme = everforest
+theme = catppuccin-macchiato
 font-size = 16
 #background-blur-radius = 20
 mouse-hide-while-typing = true

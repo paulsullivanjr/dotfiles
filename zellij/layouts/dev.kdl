@@ -1,0 +1,17 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="tab-bar"
+    }
+    pane split_direction="vertical" {
+        pane split_direction="horizontal" size="60%" {
+            pane command="hx" name="helix"
+        }
+        pane split_direction="horizontal" size="40%" {
+            pane command="claude" name="claude-code"
+        }
+    }
+    pane size="20%" name="terminal"
+    pane size=1 borderless=true {
+        plugin location="status-bar"
+    }
+}

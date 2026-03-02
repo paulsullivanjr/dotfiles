@@ -41,31 +41,31 @@ decorations = "full"
 # Enable/disable dynamic padding
 dynamic_padding = false
 
-# Colors
+# Colors (Catppuccin Macchiato)
 [colors]
 [colors.primary]
-background = "#1e1e2e"
-foreground = "#cdd6f4"
+background = "#24273a"
+foreground = "#cad3f5"
 
 [colors.normal]
-black   = "#1e1e2e"
-red     = "#f38ba8"
-green   = "#a6e3a1"
-yellow  = "#f9e2af"
-blue    = "#89b4fa"
-magenta = "#cba6f7"
-cyan    = "#89dceb"
-white   = "#cdd6f4"
+black   = "#494d64"
+red     = "#ed8796"
+green   = "#a6da95"
+yellow  = "#eed49f"
+blue    = "#8aadf4"
+magenta = "#c6a0f6"
+cyan    = "#8bd5ca"
+white   = "#b8c0e0"
 
 [colors.bright]
-black   = "#45475a"
-red     = "#f38ba8"
-green   = "#a6e3a1"
-yellow  = "#f9e2af"
-blue    = "#89b4fa"
-magenta = "#cba6f7"
-cyan    = "#89dceb"
-white   = "#f2f2f2"
+black   = "#5b6078"
+red     = "#ed8796"
+green   = "#a6da95"
+yellow  = "#eed49f"
+blue    = "#8aadf4"
+magenta = "#c6a0f6"
+cyan    = "#8bd5ca"
+white   = "#a5adcb"
 
 # Cursor settings
 [cursor]
