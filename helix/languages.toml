@@ -1,7 +1,8 @@
 # ── Language Servers ──────────────────────────────────────────────
 
-[language-server.ruby-lsp]
-command = "ruby-lsp"
+[language-server.solargraph]
+command = "solargraph"
+args = ["stdio"]
 
 [language-server.rubocop]
 command = "rubocop"
@@ -15,7 +16,7 @@ args = ["--stdio"]
 
 [[language]]
 name = "ruby"
-language-servers = ["ruby-lsp", "rubocop"]
+language-servers = ["solargraph", "rubocop"]
 auto-format = true
 indent = { tab-width = 2, unit = "  " }
 file-types = [
