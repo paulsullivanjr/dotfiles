@@ -4,7 +4,7 @@ layout {
     }
     pane split_direction="vertical" {
         pane split_direction="horizontal" size="60%" {
-            pane command="hx" name="helix"
+            pane command="nvim" name="neovim"
         }
         pane split_direction="horizontal" size="40%" {
             pane command="claude" name="claude-code"
