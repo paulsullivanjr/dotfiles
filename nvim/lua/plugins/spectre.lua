@@ -1,6 +1,9 @@
+-- Project-wide find/replace. Note: keymaps moved to <leader>S* namespace
+-- to avoid conflicts with telescope's <leader>s* search keymaps.
 return {
   "nvim-pack/nvim-spectre",
   dependencies = { "nvim-lua/plenary.nvim" },
+  cmd = "Spectre",
   keys = {
     {
       "<leader>SS",
@@ -10,29 +13,27 @@ return {
       desc = "Toggle Spectre",
     },
     {
-      "<leader>sw",
+      "<leader>Sw",
       function()
         require("spectre").open_visual({ select_word = true })
       end,
-      desc = "Search current word",
+      desc = "Spectre: search word",
     },
     {
-      "<leader>sw",
+      "<leader>Sw",
       function()
         require("spectre").open_visual()
       end,
       mode = "v",
-      desc = "Search current word",
+      desc = "Spectre: search selection",
     },
     {
-      "<leader>sp",
+      "<leader>Sf",
       function()
         require("spectre").open_file_search({ select_word = true })
       end,
-      desc = "Search on current file",
+      desc = "Spectre: search current file",
     },
   },
-  config = function()
-    require("spectre").setup()
-  end,
+  opts = {},
 }

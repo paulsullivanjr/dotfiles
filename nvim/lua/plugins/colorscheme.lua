@@ -1,34 +1,20 @@
---return {
---  "folke/tokyonight.nvim",
---  lazy = false,
---  priority = 1000,
---  opts = { style = "storm" },
---  config = function()
---    vim.cmd([[colorscheme tokyonight-storm]])
---  end,
---}
-
 return {
-  { "Mofiqul/vscode.nvim", lazy = false },
-  { "Mofiqul/dracula.nvim", lazy = false },
-  { "folke/tokyonight.nvim", lazy = false },
-  { "rebelot/kanagawa.nvim", lazy = false },
-  { "thesimonho/kanagawa-paper.nvim", lazy = false },
-  { "neanias/everforest-nvim", lazy = false },
-  { "kihachi2000/yash.nvim", lazy = false },
-  { "savq/melange-nvim", lazy = false },
-  { "ribru17/bamboo.nvim", lazy = false },
+  -- Primary colorscheme (loads at startup since LazyVim sets it as default)
   {
     "catppuccin/nvim",
-    lazy = false,
     name = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
-        -- configurations
-      })
-    end,
+    lazy = false,
+    priority = 1000,
     opts = {},
   },
+
+  -- Secondary - lazy loaded only when invoked
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+  },
+
+  -- Tell LazyVim which colorscheme to use
   {
     "LazyVim/LazyVim",
     opts = {

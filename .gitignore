@@ -3,3 +3,6 @@ nvim/lazy-lock.json
 nvim/.tool-versions
 helix/.claude/
 helix/.expert/
+nvim/lazy-lock.json
+.DS_Store
+dump.sql

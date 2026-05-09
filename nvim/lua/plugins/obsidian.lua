@@ -1,29 +1,65 @@
+-- Obsidian integration with daily notes, search, and quick-capture.
 return {
   "epwalsh/obsidian.nvim",
-  version = "*", -- recommended, use latest release instead of latest commit
-  lazy = true,
+  version = "*",
   ft = "markdown",
-  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-  -- event = {
-  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-  --   -- refer to `:h file-pattern` for more examples
-  --   "BufReadPre path/to/my-vault/*.md",
-  --   "BufNewFile path/to/my-vault/*.md",
-  -- },
-  dependencies = {
-    -- Required.
-    "nvim-lua/plenary.nvim",
-
-    -- see below for full list of optional dependencies 👇
+  cmd = {
+    "ObsidianOpen",
+    "ObsidianNew",
+    "ObsidianToday",
+    "ObsidianYesterday",
+    "ObsidianTomorrow",
+    "ObsidianSearch",
+    "ObsidianQuickSwitch",
+    "ObsidianTemplate",
   },
+  keys = {
+    { "<leader>oo", "<cmd>ObsidianOpen<cr>", desc = "Obsidian: open in app" },
+    { "<leader>on", "<cmd>ObsidianNew<cr>", desc = "Obsidian: new note" },
+    { "<leader>od", "<cmd>ObsidianToday<cr>", desc = "Obsidian: today's note" },
+    { "<leader>oy", "<cmd>ObsidianYesterday<cr>", desc = "Obsidian: yesterday's note" },
+    { "<leader>oT", "<cmd>ObsidianTomorrow<cr>", desc = "Obsidian: tomorrow's note" },
+    { "<leader>os", "<cmd>ObsidianSearch<cr>", desc = "Obsidian: search vault" },
+    { "<leader>oq", "<cmd>ObsidianQuickSwitch<cr>", desc = "Obsidian: quick switch" },
+    { "<leader>ot", "<cmd>ObsidianTemplate<cr>", desc = "Obsidian: insert template" },
+    { "<leader>ob", "<cmd>ObsidianBacklinks<cr>", desc = "Obsidian: backlinks" },
+    { "<leader>ol", "<cmd>ObsidianLinks<cr>", desc = "Obsidian: outgoing links" },
+  },
+  dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     workspaces = {
       {
-        path = "/Users/paulsullivan/obisidian",
+        name = "personal",
+        path = "/Users/paulsullivan/obsidian", -- typo fixed (was "obisidian")
       },
     },
-
-    -- see below for full list of options 👇
+    daily_notes = {
+      folder = "daily", -- create this folder in your vault, or change as needed
+      date_format = "%Y-%m-%d",
+      default_tags = { "daily" },
+    },
+    completion = {
+      nvim_cmp = false, -- you use blink.cmp instead
+      min_chars = 2,
+    },
+    new_notes_location = "current_dir",
+    -- Use mappings inside the obsidian buffer (leave default ones plus ours)
+    mappings = {
+      ["gf"] = {
+        action = function()
+          return require("obsidian").util.gf_passthrough()
+        end,
+        opts = { noremap = false, expr = true, buffer = true },
+      },
+      ["<cr>"] = {
+        action = function()
+          return require("obsidian").util.smart_action()
+        end,
+        opts = { buffer = true, expr = true },
+      },
+    },
+    ui = {
+      enable = false, -- let render-markdown.nvim handle the rendering
+    },
   },
 }
